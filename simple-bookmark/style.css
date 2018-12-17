@@ -1,0 +1,70 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 2em 1em;
+  line-height: 2em;
+  background: linear-gradient(
+    to right top,
+    rgba(41, 128, 185,1.0),
+    rgba(46, 204, 113,1.0)
+  );
+  color: rgba(44, 62, 80,1.0);
+}
+
+button{
+  border: none;
+  padding: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: rgba(44, 62, 80,1.0);
+  color: rgba(236, 240, 241,1.0);
+}
+
+button:hover{
+  transition: 0.4s ease;
+  color: rgba(44, 62, 80,1.0);
+  background-color: rgba(46, 204, 113,1.0);
+}
+
+h2{ text-align: center; }
+
+.gray-box{
+  margin-top: 2.8em;
+  padding: 2em;
+  background-color: rgba(236, 240, 241,1.0);
+}
+
+form{
+  text-align: center;  
+  margin: 1.2em auto 0 auto;
+}
+
+input{
+  width: 100%;
+  padding: 0.6em;
+  margin: 1.5em auto;
+}
+
+a{
+  text-decoration: none;
+}
+
+.visit{
+  background-color: rgba(44, 62, 80,1.0);
+  color: rgba(236, 240, 241,1.0);
+  padding: 0.5em;
+}
+
+.delete{
+  color: rgba(236, 240, 241,1.0);
+  background-color: rgba(228, 13, 60,1.0);
+  padding: 0.5em;
+}

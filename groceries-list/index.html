@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie-edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Lista de Compras</title>
+</head>
+</body>  
+  <!-- HEADER -->
+  <header id="main-header" class="text-white p-4 mb-3" style="background-color: #e67e22;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 id="header-title">Lista de Compras</h1>
+        </div>
+        <div class="col-md-6 align-self-center">
+          <input type="text" class="form-control" id="filter" placeholder="Procurar produtos...">
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- CONTAINER DO FORM -->
+  <div class="container">
+  <div id="main" class="card card-body">
+    <h2 class="title">Produtos</h2>
+    <!-- FORM -->
+    <form id="addForm" class="form-inline mb-3">
+      <input type="text" class="form-control mr-2" id="item">
+      <input type="submit" class="btn bg-success text-light" value="Adicionar">
+    </form>
+    <!-- LISTA DE ITENS -->
+    <h4 class="title">Lista</h4>
+    <ul id="items" class="list-group"></ul>
+  </div>
+  </div>
+  <!-- scripts -->
+  <script src="main.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<body>
+</html>
