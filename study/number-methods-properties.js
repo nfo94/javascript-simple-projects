@@ -1,5 +1,6 @@
 // number methods and properties
-const num = 123;
-num.toString();
-(123).toString();
-(100 + 23).toString();
+let num = 123;
+console.log(num.toString());
+let num2 = 23.134;
+console.log(num2.toFixed(1));
+console.log(parseInt(num2));
