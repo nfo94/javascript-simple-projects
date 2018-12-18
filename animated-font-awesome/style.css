@@ -1,0 +1,13 @@
+.box{
+  padding: auto;
+  margin: auto;
+  text-align: center;
+}
+
+#chain, #battery, #hourglass{ font-size: 80px; }
+
+#chain{ color: #2980b9; }
+
+#battery{ color: #27ae60; }
+
+#hourglass{ color: #e67e22; }
