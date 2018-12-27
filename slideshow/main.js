@@ -1,3 +1,7 @@
+/*
+  *Simple slideshow project
+  */
+
 let i = 0;
 const images = [];
 const time = 1000;

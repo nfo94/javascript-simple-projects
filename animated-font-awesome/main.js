@@ -1,3 +1,7 @@
+/*
+  *Animated font awesome project
+  */ 
+
 brakeChain();
 //call the function every 2 seconds so that it keeps breaking
 setInterval(brakeChain, 2000);

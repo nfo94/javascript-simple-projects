@@ -1,3 +1,7 @@
+/*
+  *Simple bookmarker project
+  */
+ 
 //FUNÇÃO de salvar bookmark
 function saveBookmark(){
   //salvando o value do form na variável siteName

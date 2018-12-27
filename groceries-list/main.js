@@ -1,3 +1,7 @@
+/*
+  *Groceries list project
+  */
+ 
 //pegando o form do "Add items"
 const form = document.getElementById('addForm');
 //pegando a ul do "Add items"

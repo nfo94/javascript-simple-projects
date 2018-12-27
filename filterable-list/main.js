@@ -1,3 +1,7 @@
+/*
+  *Filterable list project
+  */
+ 
 //pegar o input
 var filterInput = document.getElementById('filterInput');
 //adicionar o event listener

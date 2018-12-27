@@ -1,3 +1,7 @@
+/*
+  *Weight converter project
+  */
+
 //hidding the outputs
 document.getElementById('output').style.visibility= 'hidden';
 //selecting the input ang triggering event listener (input and function)
