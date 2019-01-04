@@ -23,30 +23,51 @@ body{
   z-index: 1;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.6);
-  display: none;
+  display: block;
 }
 
 .modal-content{
   background-color: #f4f4f4;
-  margin: 20% auto;
-  padding: 30px 15px;
-  width: 20em;
-  text-align: center;
+  margin: 8% auto;
+  padding: 15px;
+  width: 35em;
   box-shadow: 0 5px 8px 0 rgb(0, 0, 0, 0.4);
+  animation-name: modalOpen;
+  animation-duration: 0.8s;
 }
 
-.closeBtn{
+#closeBtn{
   color: #c0392b;
   float: right;
   font-size: 30px;
 }
 
-.closeBtn:hover, .closeBtn:focus{
+#closeBtn:hover, #closeBtn:focus{
   cursor: pointer;
   text-decoration: none;
   color: #e74c3c;
+}
+
+@keyframes modalOpen{
+  from{ opacity: 0 }
+  to{ opacity: 1 }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .modal-content{
+    margin: 8% auto;
+    padding: 15px;
+    width: 35em};
+  }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .modal-content{
+    margin: 8% auto;
+    padding: 15px;
+    width: 35em;
+  }
 }
