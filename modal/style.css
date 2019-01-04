@@ -14,7 +14,7 @@ body{
 
 .button:hover{ 
   background-color: #333; 
-  transition: 0.4s ease;
+  transition: 0.2s ease;
   background-color: #2980b9;
 }
 
@@ -27,7 +27,7 @@ body{
   height: 100vh;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.6);
-  display: block;
+  display: none;
 }
 
 .modal-content{
