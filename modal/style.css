@@ -59,15 +59,27 @@ body{
 
 @media (min-width: 481px) and (max-width: 767px) {
   .modal-content{
-    margin: 8% auto;
-    padding: 15px;
-    width: 35em};
+    margin: 10% auto;
+    padding: 10px;
+    width: 20em;
   }
+  body{ font-size: 15px; }
+}
 
 @media (min-width: 320px) and (max-width: 480px) {
   .modal-content{
-    margin: 8% auto;
+    margin: 5% auto;
     padding: 15px;
-    width: 35em;
+    width: 15em;
+  }
+  body{ font-size: 15px; }
+}
+
+@media (max-width: 320px){
+  body{ font-size: 14px; }
+  .modal-content{
+    margin: 10% auto;
+    padding: 10px;
+    width: 15em;
   }
 }
