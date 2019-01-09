@@ -7,7 +7,7 @@ body, #slider, .wrap, .slide-content{
   overflow-x: hidden;
 }
 
-.wrap{ position: relative }
+.wrap{ position: relative; }
 
 .slide{
   background-size: cover;
@@ -38,8 +38,7 @@ body, #slider, .wrap, .slide-content{
 .arrow{
   cursor: pointer;
   position: absolute;
-  top: 50%;
-  margin-top: -50%;
+  top: 40%;
   width: 0;
   height: 0;
   border-style: solid;
@@ -50,4 +49,8 @@ body, #slider, .wrap, .slide-content{
   border-color: transparent #fff transparent transparent;
   left: 0;
   margin-left: 30px;
+}
+
+#arrow-right{
+  
 }
