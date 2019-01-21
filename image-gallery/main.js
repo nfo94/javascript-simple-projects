@@ -1,0 +1,1 @@
+const current = document.querySelector('#current');
