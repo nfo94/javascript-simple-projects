@@ -20,4 +20,16 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn{
+  to{
+    opacity: 1;
+  }
+}
+
+.fade-in{
+  opacity: 0;
+  animation: fadeIn 0.5s  ease-in 1 forwards;
 }
