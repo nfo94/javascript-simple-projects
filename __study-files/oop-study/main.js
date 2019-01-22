@@ -5,15 +5,17 @@
  * - But primitives can behave like objects because javascript can wrap them in an object
  */
 
-let userOne = {
-  email: 'nfo@ninja',
-  name: 'Nat',
-  login(){
-    console.log(this.email, 'has logged in');
-  },
-  logout(){
-    console.log(this.email, 'has logged out');
+class User{
+  // constructor function creates the new object
+  constructor(){
+    this.name = name;
+    this.email = email;
+    this.registry = registry;
   }
-};
+}
 
-console.log(userOne.name);
+/**
+ * The "new" keyword creates a new empty object {}
+ * sets the value of "this" to be the new empty object 
+ * and calls the constructor method
+ */
