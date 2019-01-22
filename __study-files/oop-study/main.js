@@ -7,12 +7,20 @@
 
 class User{
   // constructor function creates the new object
-  constructor(){
+  constructor(name, email){
     this.name = name;
     this.email = email;
-    this.registry = registry;
+  }
+  login(){
+    console.log(this.email, 'is logged in');
+  }
+  logout(){
+    console.log(this.email, 'is logged out');
   }
 }
+
+let userOne = new User('Natália', 'nfo@gmail.com');
+userOne.login();
 
 /**
  * The "new" keyword creates a new empty object {}
