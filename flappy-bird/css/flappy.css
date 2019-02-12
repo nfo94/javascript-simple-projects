@@ -1,0 +1,18 @@
+*{
+  box-sizing: border-box;
+}
+
+@font-face{
+  font-family: 'Pixel';
+  src: url('../fonts/Pixel.ttf');
+}
+
+.screen {
+  position: relative;
+  border: 5px solid dodgerblue;
+  width: 700px;
+  height: 1200px;
+  margin: 15px;
+  background-color: deepskyblue;
+  overflow: hidden;
+}
