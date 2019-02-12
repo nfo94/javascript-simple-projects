@@ -10,9 +10,47 @@
 .screen {
   position: relative;
   border: 5px solid dodgerblue;
-  width: 700px;
-  height: 1200px;
+  width: 80%;
+  height: 100%;
   margin: 15px;
   background-color: deepskyblue;
   overflow: hidden;
 }
+
+.bird{
+  position: absolute;
+  width: 60px;
+  left: 40%;
+  bottom: 50%;
+}
+
+.barriers{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;  
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.barrier{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.barrier__border{
+  height: 30px;
+  width: 130px;
+  background: linear-gradient(90deg,#639301,#A5E82E);
+  border: 2px solid black;
+}
+
+.barrier__body{
+  height: 40px;
+  width: 110px;
+  background: linear-gradient(90deg,#639301,#A5E82E);
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
