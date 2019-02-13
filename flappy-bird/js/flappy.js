@@ -31,7 +31,7 @@ function Barrier(reverse = false) {
 // "gameHeight" is the screen, "opening" is the space for the bird 
 // to pass through and "x" is for the x axis - moving the animation
 function Obstacle(gameHeight, opening, x) {
-  this.element = newElement('div', 'obstacle'); // this is the pair!
+  this.element = newElement('div', 'obstacle'); // this is the obstacle!
   this.topBarrier = new Barrier(true); // top barrier
   this.bottomBarrier = new Barrier(false); // bottom barrier
 
@@ -50,8 +50,8 @@ function Obstacle(gameHeight, opening, x) {
 
   // get the x to see where the game is
   this.getX = () => {
-    // parsing the the left pixels from the obstacle to check where it is
-    parseInt(this.element.style.left.split('px')[0]);
+    // parsing the left pixels from the obstacle to check where it is
+    parseInt(this.element.style.left.split('px')[0]); // if it 100px it wiil get 100
   }
 
   // considering the x passed in the arguments, setting new x
@@ -73,26 +73,30 @@ function multipleObstacles(gameHeight, gameWidth, opening, spaceBetweenObstacles
     new Obstacle(gameHeight, opening, gameWidth + spaceBetweenObstacles * 3)
   ];
 
+  // pixels to move x, animating
   const displacement = 3;
   this.animate = () => {
-    this.obstacles.forEach(pair => {
-      pair.setX(pair.getX() - displacement);
+    this.obstacles.forEach(obstacle => { // for each obstacle...
+      // set a new x based on the current x (get) and the displacement
+      obstacle.setX(obstacle.getX() - displacement); 
       // when the element gets out of the game screen
-      if (pair.getX() < -pair.getWidth()) {
+      if (obstacle.getX() < -obstacle.getWidth()) {
         // moving the animation
-        pair.setX(pair.getX() + spaceBetweenObstacles * this.obstacles.lenght);
+        // set a new x (new position) considering the current + the space between * how 
+        // many obstacle itens
+        obstacle.setX(obstacle.getX() + spaceBetweenObstacles * this.obstacles.lenght);
         // changing randomly the new opening
-        pair.lotteryOpening();
+        obstacle.lotteryOpening();
       }
 
       const middle = gameWidth / 2;
-      const passedMiddle = pair.getX() + displacement >= middle && pair.getX() < middle;
+      const passedMiddle = obstacle.getX() + displacement >= middle && obstacle.getX() < middle 
       if (passedMiddle) notifyGameCenter();
 
     });
   }
 }
 
-const b = new multipleObstacles(700, 1200, 200, 400);  
+const b = new multipleObstacles(100, 1200, 300, 200);  
 const gameArea = document.querySelector('.screen');
-b.obstacles.forEach(pair => gameArea.appendChild(pair.element));
+b.obstacles.forEach(obstacle => gameArea.appendChild(obstacle.element));
