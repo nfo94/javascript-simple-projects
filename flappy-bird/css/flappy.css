@@ -24,7 +24,7 @@
   bottom: 50%;
 }
 
-.barriers{
+.barriers{ /*par-de-barreira*/
   position: absolute;
   top: 0;
   height: 100%;
@@ -33,29 +33,25 @@
   justify-content: space-between;
 }
 
-.barrier{
+.barrier{ /*barreira*/
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.barrier__border{
+.barrier__border{ /*borda*/
   height: 30px;
   width: 130px;
   background: linear-gradient(90deg,#639301,#A5E82E);
   border: 2px solid black;
 }
 
-.barrier__body{
-  height: 140px;
+.barrier__body{ /*corpo*/
+  height: 140px; 
   width: 110px;
   background: linear-gradient(90deg,#639301,#A5E82E);
   border-left: 2px solid black;
   border-right: 2px solid black;
-}
-
-.barrier:nth-of-type(2){
-  transform: rotate(180deg);
 }
 
 .progress{
