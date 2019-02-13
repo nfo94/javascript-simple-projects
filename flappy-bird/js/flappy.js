@@ -72,13 +72,12 @@ function multipleObstacles(gameHeight, gameWidth, opening, spaceBetweenObstacles
     new Obstacle(gameHeight, opening, gameWidth + spaceBetweenObstacles * 2),
     new Obstacle(gameHeight, opening, gameWidth + spaceBetweenObstacles * 3)
   ];
-
   // pixels to move x, animating
   const displacement = 3;
   this.animate = () => {
     this.obstacles.forEach(obstacle => { // for each obstacle...
       // set a new x based on the current x (get) and the displacement
-      obstacle.setX(obstacle.getX() - displacement); 
+      obstacle.setX(obstacle.getX() - displacement);
       // when the element gets out of the game screen
       if (obstacle.getX() < -obstacle.getWidth()) {
         // moving the animation
@@ -90,13 +89,44 @@ function multipleObstacles(gameHeight, gameWidth, opening, spaceBetweenObstacles
       }
 
       const middle = gameWidth / 2;
-      const passedMiddle = obstacle.getX() + displacement >= middle && obstacle.getX() < middle 
+      const passedMiddle = obstacle.getX() + displacement >= middle && obstacle.getX() < middle
       if (passedMiddle) notifyGameCenter();
-
     });
   }
 }
 
-const b = new multipleObstacles(100, 1200, 300, 200);  
+function Bird(gameHeight) {
+  let flying = false;
+  this.element = newElement('img', 'bird');
+  this.element.src = './imgs/bird.png';
+
+  this.getY = () => parseInt(this.element.style.bottom.split('px')[0]);
+  this.setY = y => this.element.style.bottom = `${y}px`;
+  window.onkeyup = e => flying = true;
+  window.onkeydown = e => flying = false;
+
+  this.animate = () => {
+    const newY = this.getY() + (flying ? 8 : -5);
+    const maxHeight = gameHeight - this.element.clientHeight;
+
+    if (newY <= 0) {
+      this.setY(0);
+    } else if (newY >= maxHeight) {
+      this.setY(maxHeight);
+    } else {
+      this.setY(newY);
+    }
+  }
+
+  this.setY(gameHeight / 2)
+}
+
+const barriers = new multipleObstacles(700, 1200, 200, 400);
+const bird = new Bird(700);
 const gameArea = document.querySelector('.screen');
-b.obstacles.forEach(obstacle => gameArea.appendChild(obstacle.element));
+gameArea.appendChild(bird.element);
+barriers.obstacles.forEach(obstacle => gameArea.appendChild(obstacle.element));
+setInterval(() => {
+  barriers.animate();
+  bird.animate();
+}, 20);

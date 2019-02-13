@@ -1,59 +1,84 @@
-*{
+* {
   box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
 }
 
-@font-face{
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #0D262D;
+  color: #fff;
+  height: 100%;
+}
+
+@font-face {
   font-family: 'Pixel';
   src: url('../fonts/Pixel.ttf');
+  font-family: 'Oswald';
+  src: url('../fonts/Oswald-Regular.ttf') format('truetype');
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
 }
 
 .screen {
   position: relative;
   border: 5px solid dodgerblue;
+  height: 700px;
   width: 1200px;
-  height: 600px;
   margin: 15px;
   background-color: deepskyblue;
+  overflow: hidden;
 }
 
-.bird{
+.bird {
   position: absolute;
   width: 60px;
-  left: 45%;
-  bottom: 50%;
+  left: calc(50% - 30px);
 }
 
-.obstacle{ /*par-de-barreira, barrier + barrier*/
+.obstacle {
+  /*par-de-barreira, barrier + barrier*/
   position: absolute;
   top: 0;
   height: 100%;
-  display: flex;  
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.barrier{ /*barreira*/
+.barrier {
+  /*barreira*/
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.barrier__border{ /*borda*/
+.barrier__border {
+  /*borda*/
   height: 30px;
   width: 130px;
-  background: linear-gradient(90deg,#639301,#A5E82E);
+  background: linear-gradient(90deg, #639301, #A5E82E);
   border: 2px solid black;
 }
 
-.barrier__body{ /*corpo*/
-  height: 100px; 
-  width: 100px;
-  background: linear-gradient(90deg,#639301,#A5E82E);
+.barrier__body {
+  /*corpo*/
+  height: 40px;
+  width: 110px;
+  background: linear-gradient(90deg, #639301, #A5E82E);
   border-left: 2px solid black;
   border-right: 2px solid black;
 }
 
-.progress{
+.progress {
   position: absolute;
   top: 10px;
   right: 15px;
