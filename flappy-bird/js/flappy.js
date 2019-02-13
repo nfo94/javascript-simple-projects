@@ -35,6 +35,8 @@ function Barriers(height, width, x){
   this.element.appendChild(this.bottomBarrier.element);
 }
 
+
+
 // const b = new Barrier(false);
 // console.log(b);
 // b.setHeight(200);
