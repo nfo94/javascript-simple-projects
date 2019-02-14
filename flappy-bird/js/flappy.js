@@ -9,9 +9,8 @@ function newElement(tagName, className) {
 }
 
 // creating new barrier
-function Barrier(reverse = false) {
-  // using the function "newElement" that we created, a new div with class barrier
-  this.element = newElement('div', 'barrier');
+function Barrier(reverse = false) { // creating one barrier box
+  this.element = newElement('div', 'barrier'); //new barrier element
 
   // creating the border and the body of the barrier
   const border = newElement('div', 'barrier__border');
@@ -31,7 +30,7 @@ function Barrier(reverse = false) {
 // "gameHeight" is the screen, "opening" is the space for the bird 
 // to pass through and "x" is for the x axis - moving the animation
 function Obstacle(gameHeight, opening, x) {
-  this.element = newElement('div', 'obstacle'); // this is the obstacle!
+  this.element = newElement('div', 'obstacle'); // the whole obstacle!
   this.topBarrier = new Barrier(true); // top barrier
   this.bottomBarrier = new Barrier(false); // bottom barrier
 
@@ -48,11 +47,8 @@ function Obstacle(gameHeight, opening, x) {
     this.bottomBarrier.setHeight(bottomHeight);
   }
 
-  // get the x to see where the game is
-  this.getX = () => {
-    // parsing the left pixels from the obstacle to check where it is
-    parseInt(this.element.style.left.split('px')[0]); // if it 100px it wiil get 100
-  }
+  // parsing the left pixels from the obstacle to check where it is
+  this.getX = () => parseInt(this.element.style.left.split('px')[0]); // ex: [100,px]
 
   // considering the x passed in the arguments, setting new x
   this.setX = x => this.element.style.left = `${x}px`;
@@ -75,15 +71,13 @@ function multipleObstacles(gameHeight, gameWidth, opening, spaceBetweenObstacles
   // pixels to move x, animating
   const displacement = 3;
   this.animate = () => {
-    this.obstacles.forEach(obstacle => { // for each obstacle...
+    this.obstacles.forEach(obstacle => { 
       // set a new x based on the current x (get) and the displacement
       obstacle.setX(obstacle.getX() - displacement);
       // when the element gets out of the game screen
       if (obstacle.getX() < -obstacle.getWidth()) {
-        // moving the animation
-        // set a new x (new position) considering the current + the space between * how 
-        // many obstacle itens
-        obstacle.setX(obstacle.getX() + spaceBetweenObstacles * this.obstacles.lenght);
+        // set a new x (new position)
+        obstacle.setX(obstacle.getX() + spaceBetweenObstacles * this.obstacles.length);
         // changing randomly the new opening
         obstacle.lotteryOpening();
       }
@@ -91,7 +85,7 @@ function multipleObstacles(gameHeight, gameWidth, opening, spaceBetweenObstacles
       const middle = gameWidth / 2;
       const passedMiddle = obstacle.getX() + displacement >= middle && obstacle.getX() < middle
       if (passedMiddle) notifyGameCenter();
-    });
+    })
   }
 }
 
@@ -102,8 +96,8 @@ function Bird(gameHeight) {
 
   this.getY = () => parseInt(this.element.style.bottom.split('px')[0]);
   this.setY = y => this.element.style.bottom = `${y}px`;
-  window.onkeyup = e => flying = true;
-  window.onkeydown = e => flying = false;
+  window.onkeydown = e => flying = true;
+  window.onkeyup = e => flying = false;
 
   this.animate = () => {
     const newY = this.getY() + (flying ? 8 : -5);
@@ -121,7 +115,7 @@ function Bird(gameHeight) {
   this.setY(gameHeight / 2)
 }
 
-const barriers = new multipleObstacles(700, 1200, 200, 400);
+const barriers = new multipleObstacles(700, 1200, 450, 400);
 const bird = new Bird(700);
 const gameArea = document.querySelector('.screen');
 gameArea.appendChild(bird.element);
