@@ -17,6 +17,9 @@ body {
 @font-face {
   font-family: 'Pixel';
   src: url('../fonts/Pixel.ttf');
+}
+
+@font-face{
   font-family: 'Oswald';
   src: url('../fonts/Oswald-Regular.ttf') format('truetype');
 }
@@ -84,4 +87,5 @@ body {
   right: 15px;
   font-family: 'Pixel';
   font-size: 30px;
+  z-index: 100;
 }
