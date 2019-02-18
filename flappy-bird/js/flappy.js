@@ -31,6 +31,7 @@ function Barrier(reverse = false) { //Barreira
 // "x" is for the x axis - moving the animation
 function Obstacle(gameHeight, opening, x) { //ParDeBarreiras
   this.element = newElement('div', 'obstacle'); // the whole obstacle!
+
   this.topBarrier = new Barrier(true); // top barrier
   this.bottomBarrier = new Barrier(false); // bottom barrier
 
@@ -69,7 +70,7 @@ function multipleObstacles(gameHeight, gameWidth, opening, spaceBetweenObstacles
     new Obstacle(gameHeight, opening, gameWidth + spaceBetweenObstacles * 3)
   ];
   // pixels to move x, animating
-  const displacement = 3;
+  const displacement = 4;
   this.animate = () => {
     this.obstacles.forEach(obstacle => {
       // set a new x based on the current x (get) and the displacement
@@ -86,6 +87,9 @@ function multipleObstacles(gameHeight, gameWidth, opening, spaceBetweenObstacles
       const passedMiddle = obstacle.getX() + displacement >= middle && obstacle.getX() < middle;
       if (passedMiddle) notifyGameMiddle();
     })
+    setInterval(() => {
+    
+    }, 5000);
   }
 }
 
@@ -105,7 +109,6 @@ function Bird(gameHeight) { // Passaro
   this.animate = () => {
     // flying? up 8 pixels. Not? -5 pixels
     const newY = this.getY() + (flying ? 8 : -5);
-    // the max. height it's the game screen 
     const maxHeight = gameHeight - this.element.clientHeight;
     // stop bird from escaping the screen (bottom)
     if (newY <= 0) {
@@ -137,18 +140,18 @@ function areOverlaped(elementA, elementB) {
   const b = elementB.getBoundingClientRect();
 
   // check horizontal and vertical collision
-  const horizontal = a.left + a.width >= a.left && b.left + b.width >= a.left;
+  const horizontal = a.left + a.width >= b.left && b.left + b.width >= a.left;
   const vertical = a.top + a.height >= b.top && b.top + b.height >= a.top;
   return horizontal && vertical;
 }
 
-function elementsCollided(bird, multipleObstacles) {
+function elementsCollided(bird, gameObstacles) {
   let collided = false;
-  multipleObstacles.obstacles.forEach(obstacle => {
+  gameObstacles.obstacles.forEach(obstacle => {
     if (!collided) {
-      const above = obstacle.above.element;
-      const bellow = obstacle.bellow.element;
-      collided = areOverlaped(bird.element, above) || areOverlaped(bird.element, bellow)
+      const above = obstacle.topBarrier.element;
+      const bellow = obstacle.bottomBarrier.element;
+      collided = areOverlaped(bird.element, above) || areOverlaped(bird.element, bellow);
     }
   })
   return collided;
@@ -164,20 +167,23 @@ function FlappyBird() {
   //creating the progress 
   const progress = new Progress();
   // creating multiple obstacles
-  const multipleObstacles = new multipleObstacles(gameHeight, gameWidth, 250, 400, () => progress.updateScore(++score));
+  const gameObstacles = new multipleObstacles(gameHeight, gameWidth, 245, 400, () => progress.updateScore(++score));
   // creating birds
   const bird = new Bird(gameHeight);
   // appending stuff on game screen
   gameArea.appendChild(progress.element);
   gameArea.appendChild(bird.element);
-  multipleObstacles.obstacles.forEach(obstacle => gameArea.appendChild(obstacle.element));
+  gameObstacles.obstacles.forEach(obstacle => gameArea.appendChild(obstacle.element));
   // starting animation
   this.start = () => {
     const timer = setInterval(() => {
-      multipleObstacles.animate();
+      gameObstacles.animate();
       bird.animate();
-      if (collided(bird, multipleObstacles)) {
+      if (elementsCollided(bird, gameObstacles)) {
         clearInterval(timer);
+        let gameOver = newElement('div', 'gameOver');
+        gameOver.innerHTML = 'Game Over! Refresh'
+        gameArea.appendChild(gameOver );
       }
     }, 20);
   }
