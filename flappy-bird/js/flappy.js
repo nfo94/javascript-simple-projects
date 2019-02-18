@@ -87,9 +87,6 @@ function multipleObstacles(gameHeight, gameWidth, opening, spaceBetweenObstacles
       const passedMiddle = obstacle.getX() + displacement >= middle && obstacle.getX() < middle;
       if (passedMiddle) notifyGameMiddle();
     })
-    setInterval(() => {
-    
-    }, 5000);
   }
 }
 
@@ -183,7 +180,7 @@ function FlappyBird() {
         clearInterval(timer);
         let gameOver = newElement('div', 'gameOver');
         gameOver.innerHTML = 'Game Over! Refresh'
-        gameArea.appendChild(gameOver );
+        gameArea.appendChild(gameOver);
       }
     }, 20);
   }
