@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  box-sizing: inherit;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.8rem;
+  color: rgba(236, 240, 241,1.0);
+}
+
+.container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(236, 240, 241,1.0);
+}
+
+.box{
+  background-color: rgba(52, 152, 219,1.0);
+  padding: 1rem;
+  box-shadow: 0 0 4rem rgba(52, 73, 94,1.0);
+  border-radius: 1rem;
+  width: 20rem;
+  height: 20rem;
+}
+
+.box__input{
+  border: none;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  padding: 0.5rem;
+  display: inline-block;
+}
+
+#fact{
+  display: none;
+}
