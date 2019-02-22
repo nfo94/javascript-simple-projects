@@ -41,10 +41,6 @@ body{
   margin-top: 1.8rem;
 }
 
-.customer__stars{
-  color: rgba(241, 196, 15,1.0);
-}
-
 .customer a{
   text-decoration: none;
   color: rgba(241, 196, 15,1.0);
