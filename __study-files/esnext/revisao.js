@@ -61,6 +61,37 @@
 // let dog1 = new Dog;
 // console.log(dog1.bark());
 
-const employee = { name: 'Nat', salary: 12000 };
-const clone = { isActive: true, ...employee };
-console.log(clone.name);
+// const employee = { name: 'Nat', salary: 12000 };
+// const clone = { isActive: true, ...employee };
+// console.log(clone.name);
+
+// tagged templates
+
+// function dollar(parts, ...values) {
+//   const result = [];
+//   values.forEach((value, index) => {
+//     value = isNaN(value) ? value : `${value.toFixed(2)}`;
+//     result.push(parts[index], value);
+//   });
+//   return result.join('');
+// }
+
+// const price = 29.99;
+// const pricePortion = 11;
+// console.log(dollar `1x de ${price} ou 3x de ${pricePortion}.`)
+
+// Map object
+
+// const techs = new Map();
+// techs.set('react', { framework: false });
+// techs.set('angular', { framework: true });
+// console.log(techs.get('react'));
+
+// Set object - it doesn`t accept repetition 
+
+// const teams = new Set();
+// teams.add('Vasco');
+// teams.add('Corinthians');
+// teams.add('Bahia');
+// teams.add('Vasco');
+// console.log(teams);
