@@ -37,3 +37,7 @@ body{
   font-size: 2rem;
   font-weight: bold;
 }
+
+.txt{
+  border-right: 0.05rem solid #fff;
+}
