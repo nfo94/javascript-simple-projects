@@ -29,16 +29,11 @@ body{
 }
 
 .box h1{
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 2rem;
 }
 
-.box p{
-  margin-top: 2rem;
-}
-
 .box span{
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
 }
-
