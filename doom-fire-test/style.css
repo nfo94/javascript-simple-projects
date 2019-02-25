@@ -1,0 +1,40 @@
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+table{
+  border-collapse: collapse;
+  border: 2px solid #333;
+}
+
+td{
+  width: 10px;
+  height: 10px;
+  border: 1px solid #333;
+  text-align: center;
+  vertical-align: center;
+  font-family: 'Roboto Mono', monospace;  
+  font-size: 16px;
+  position: relative;
+}
+
+.pixel-index{
+  font-size: 10px;
+  display: inline-block;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  color: #999;
+}
+
+.pixel{
+  width: 4px;
+  height: 4px;
+  border: 0;
+}
