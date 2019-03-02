@@ -4,19 +4,17 @@
  * ‘call back’.
  */
 
-let promiseToCleanTheRoom = new Promise(function(resolve, reject){
+let promiseToCleanTheRoom = new Promise(function (resolve, reject) {
   //change below to see resolve and reject 
   let isClean = false;
-  if(isClean){
+  if (isClean) {
     resolve('clean');
-  }else{
+  } else {
     reject('not clean');
   }
 })
 
 // if resolved
-promiseToCleanTheRoom.then(function(fromResolve){
-  console.log('The room is ' + fromResolve);
-}).catch(function(fromReject){
-  console.log('The room is ' + fromReject);
-})
+promiseToCleanTheRoom
+  .then(function (fromResolve) { console.log('The room is ' + fromResolve); })
+  .catch(function (fromReject) { console.log('The room is ' + fromReject); })
