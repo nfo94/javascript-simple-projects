@@ -7,4 +7,3 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 
 app.listen(8080, () => console.log('Executing..'));
-
