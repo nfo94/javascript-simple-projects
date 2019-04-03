@@ -21,7 +21,7 @@ const upload = multer({ storage }).single('arquivo');
 
 app.post('/upload', (req, res) => {
   upload(req, res, err => {
-    if(err){
+    if (err) {
       return res.end('An error ocurred.');
     }
 
