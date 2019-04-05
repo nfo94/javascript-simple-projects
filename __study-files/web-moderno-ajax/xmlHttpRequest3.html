@@ -18,7 +18,7 @@
       xhr.onreadystatechange = e => {
         if(xhr.readyState === 4){
           if(xhr.status === 200){
-            config.success(xhr.responseXML);
+            config.success(xhr.responseXML)
           }else if(xhr.status >= 400){
             config.error({
               code: xhr.status,
@@ -35,10 +35,17 @@
       url: 'dados/estados.xml',
       method: 'get',
       success(response){
-        const estados = response.getElementByTagName('estado');
+        const estados = response.getElementsByTagName('estado');
+        // The Array.from() method creates a new, shallow-copied Array instance 
+        // from an array-like or iterable object.
         const itens = Array.from(estados).reduce(
           (html, estado) => html + `<li>${estado.attributes.nome.value}</li>`, ''  
         )
+        document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`);
+      },
+      error(e){
+        const msg = document.createTextNode(`${e.code}: ${e.text}`);
+        document.body.appendChild(msg);
       }
     })
   </script>
